@@ -5,11 +5,23 @@
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+# Find Percentage of Rating of Car Regarding Safety 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## 1.0 Introduction
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+I found the data sources from:
+
+- https://www.kaggle.com/elikplim/car-evaluation-data-set
+
+- https://data.world/uci/car-evaluation
+
+I address two in my analysis:
+
+- Does there exist a high percentage of cars that cost high, medium and low values that rate as high, medium regarding safety?
+- Considering high, medium and low cost value of cars, what percentage of 2, 3, 4 seat cars rate high, medium and low concerning safety?
+
+## 2.0 Synopsis
+
 
 ```{r cars}
 summary(cars)
