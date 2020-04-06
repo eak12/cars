@@ -204,19 +204,39 @@ $(document).ready(function () {
 <p>I address two in my analysis:</p>
 <ul>
 <li>Does there exist a high percentage of cars that cost high, medium and low values that rate as high, medium regarding safety?</li>
-<li>Considering high, medium and low cost value of cars, what percentage of 2, 3, 4 seat cars rate high, medium and low concerning safety?</li>
+<li>Considering only high, medium and low ‘buying price’ of cars, what percentage of 2, 3, 4 seat cars rate high, medium and low concerning safety?</li>
 </ul>
 </div>
 <div id="synopsis" class="section level2">
 <h2>2.0 Synopsis</h2>
-<pre class="r"><code>summary(cars)</code></pre>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
+<p>I:</p>
+<ol style="list-style-type: decimal">
+<li>Loaded the csv file.</li>
+<li>Found the percentage of cars safety that rate as high, low and med for each buying price category (v.high, high, med, low).</li>
+<li>Found the percentage of cars safety that rate as high, low and med for two, three and four seater cars.</li>
+<li>Produced multi panels of a graph using ggplot2.</li>
+<li>Produced a panel for each buying category. Each panel contains a bar chart of percentage of cars that rate as high, low and med.</li>
+<li>Filtered only rows of buying price of high, medium and low values.</li>
+<li>Produced a second multi-panel of a graph using ggplot.</li>
+<li>Took the filtered rows and produced a panel for each car seat category of two, three or four. Each subplot contains a bar chart of percentage of cars that rate as high, low and med.</li>
+</ol>
+<pre class="r"><code>file_car&lt;- read.csv(&quot;car_evaluation.csv&quot;, header = FALSE, col.names = c('buying.price', 'maintaince.cost', 'number.doors', 'number.persons', 'lug.boot', 'safety', 'decision'))
+
+head(file_car)</code></pre>
+<pre><code>##   buying.price maintaince.cost number.doors number.persons lug.boot safety
+## 1        vhigh           vhigh            2              2    small    low
+## 2        vhigh           vhigh            2              2    small    med
+## 3        vhigh           vhigh            2              2    small   high
+## 4        vhigh           vhigh            2              2      med    low
+## 5        vhigh           vhigh            2              2      med    med
+## 6        vhigh           vhigh            2              2      med   high
+##   decision
+## 1    unacc
+## 2    unacc
+## 3    unacc
+## 4    unacc
+## 5    unacc
+## 6    unacc</code></pre>
 </div>
 <div id="including-plots" class="section level2">
 <h2>Including Plots</h2>

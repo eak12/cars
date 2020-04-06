@@ -18,13 +18,26 @@ I found the data sources from:
 I address two in my analysis:
 
 - Does there exist a high percentage of cars that cost high, medium and low values that rate as high, medium regarding safety?
-- Considering high, medium and low cost value of cars, what percentage of 2, 3, 4 seat cars rate high, medium and low concerning safety?
+- Considering only high, medium and low 'buying price' of cars, what percentage of 2, 3, 4 seat cars rate high, medium and low concerning safety?
 
 ## 2.0 Synopsis
 
+I:
 
-```{r cars}
-summary(cars)
+1. Loaded the csv file.
+2. Found the percentage of cars safety that rate as high, low and med for each buying price category (v.high, high, med, low).
+3. Found the percentage of cars safety that rate as high, low and med for two, three and four seater cars.
+4. Produced multi panels of a graph using ggplot2.
+5. Produced a panel for each buying category.  Each panel contains a bar chart of percentage of cars that rate as high, low and med.
+6. Filtered only rows of buying price of high, medium and low values.
+7. Produced a second multi-panel of a graph using ggplot.
+8. Took the filtered rows and produced a panel for each car seat category of two, three or four.  Each subplot contains a bar chart of percentage of cars that rate as high, low and med.
+
+
+```{r Load}
+file_car<- read.csv("car_evaluation.csv", header = FALSE, col.names = c('buying.price', 'maintaince.cost', 'number.doors', 'number.persons', 'lug.boot', 'safety', 'decision'))
+
+head(file_car)
 ```
 
 ## Including Plots
