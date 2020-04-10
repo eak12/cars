@@ -35,6 +35,10 @@ I:
 
 
 ```{r Load}
+#step 1 - create the working directory
+
+setwd("C:/Users/Elias/Desktop/cars/cars")
+
 file_car<- read.csv("car_evaluation.csv", header = FALSE, col.names = c('buying.price', 'maintaince.cost', 'number.doors', 'number.persons', 'lug.boot', 'safety', 'decision'))
 
 file_car[1:10]
